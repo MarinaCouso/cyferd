@@ -4,6 +4,7 @@ import { useFormik } from "formik"
 import { FormTextInput, CheckboxInput, FormError } from "../../components/FormComponents/view"
 import * as Yup from "yup"
 import Button from "../../components/Button/view"
+import HorizontalScroll from "../../components/HorizontalScroll/view"
 
 const validationSchema = Yup.object().shape({
   requestedBy: Yup.string().required("* Este campo es obligatorio"),
@@ -59,6 +60,7 @@ const Form = ({ formInfo }) => {
   return (
     <ContentContainer showsVerticalScrollIndicator={false}>
       {returnInputs()}
+      <HorizontalScroll />
       <Button title="Send" onPress={() => handleRegister(formik.values)} type="submit" />
     </ContentContainer>
   )
