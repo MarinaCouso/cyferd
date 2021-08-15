@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import { getObjectsData } from "../../services/dataService"
 
 // Styles
 import { HorizontalScrollView } from "./styles"
@@ -7,9 +8,21 @@ import { HorizontalScrollView } from "./styles"
 import Card from "../../components/Card"
 
 const HorizontalScroll = () => {
+  const [objectsInfo, setObjectsInfo] = useState([])
+
+  const getObjectsDataFromService = async () => {
+    const json = await getObjectsData()
+    setObjectsInfo(json.data)
+  }
+  useEffect(() => {
+    getObjectsDataFromService()
+  }, [])
+
   return (
     <HorizontalScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      <Card />
+      {objectsInfo?.map((object) => (
+        <Card object={object} />
+      ))}
     </HorizontalScrollView>
   )
 }
