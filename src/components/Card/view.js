@@ -2,16 +2,16 @@ import React from "react"
 import { CardContainer, CardImage, CardContentContainer } from "./styles"
 import { CardTitle, CardCategory, CardContent } from "../TextComponents/view"
 
-const Card = ({ item }) => {
+const Card = ({ object }) => {
   const url =
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAMAAABrrFhUAAAAw1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAcKsgAAAAQHRSTlMABAgMEBQXGBscIyQoKy80OzxAQ0RHSExTV1hbXF9gY2drb3N3e4OHi4+Tl5yfo6evu7/Dy8/X29/j5+vv8/f7UUaYfwAAA4FJREFUeNrt3d1Sm0AYgOEFEzH+Bq3VoqZogiZqNIHERitm7/+qeqCVJf0bMHTyse97VO2gfk8JsNvMqBQREREREREREREREREREREREZH1ue2wPxRVP2y7y5q+EcYvWmAvcdhYwvjrA5HTvxkM1j967keCx9da65fI+cj8m1Mtvulm+fkPUl2D0oOy8x/PdS2aH5f896/J/FrPS50DW6muTelWiev/VNeoafF7QaRrVVR0fi9///8W+Q1Jz+4NP5rlnwe8gl9hYB79GEhcwASP5gyDYgc3zRMgacpcwjUT8xQodgaH5vxrUhexa6bA10KHxsb531Riaz5lc8SF7oHGKyBQgguM10CR/YH97LgH0Ts5jnEv8MtdAiLRAObjTFjuJujLBvCzSfoFDhtmhzVkAzSySYblAPJ/sXF4tuIdbuR/4qUCeCMJj/0jryoA70nGwmfmVQQwkrL0G1UD0JKz+G1VAvBZDsCnSgA6cgA6AAAAAABVAtx2VrDb/wjQWcV1TwcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABy3yAZrmAJv2ECAAAAqBLgVA7AaSUAvhwAvxIA91nK/M9uJQCqJwWgp6oBcO5kzH/nVASg1GmSrvr0aZL/VdnLBRAYAAAAAAAAAAAAAAB/AXDbJ2f5jP3FnvCMndyFIU/ar4tGpydmmbv0ZXPPUUrda4u7U+pEW90XldgNkKjUboBUacsDAAAAAHhr0sl13u3Vpu55fraJAZDdBmNlTXH2NKxm739+sgfg+/vQMzXOzoZtW+bfzmYeq+vsgytbAK6yma9VYKwOm3bM3zTW/4HyjFvCvR0A5gaAp8yLgO7aMH9Xm5eAhXe+RPWfP1p8L43zaH4m3q33+LuxOe3MUUqpMP9sOA533HoO7+6E4/ys4euu6MTWdcDk7a0ke3M755/v/Tw3LuwEuMheHQMb5x8Ylwcp7/9a6n8JOLkrZN+2+fuL94jAqv3xNPj1Ltka2TP/qPXbB4X92I7x4/0/7xRcPtR9+ofLf+z7eEfdm2FNu+keeYqIiIiIiIiIiIiIiIiIiIiIiMimfgDsyyCc5xrTnwAAAABJRU5ErkJggg=="
   return (
     <CardContainer>
       <CardImage source={{ uri: url }} resizeMode="cover" />
       <CardContentContainer>
-        <CardCategory text="Laptop" />
-        <CardTitle text="stock: 4" />
-        <CardContent text="£1500" />
+        <CardTitle text={object.Name} />
+        <CardContent text={object.Price} />
+        <CardCategory text={`Stock: ${object.Stock}`} />
       </CardContentContainer>
     </CardContainer>
   )
