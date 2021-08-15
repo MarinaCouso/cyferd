@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { InputContainer, TextInput, Label, CheckBoxContainerStyle, LabelStyle, CheckboxIcon } from "./styles"
+import { ErrorText, InputContainer, TextInput, Label, CheckBoxContainerStyle, LabelStyle, CheckboxIcon } from "./styles"
 import { CheckBox } from "react-native-elements"
 import checkedIcon from "../../assets/checkedIcon.png"
 import uncheckedIcon from "../../assets/uncheckedIcon.png"

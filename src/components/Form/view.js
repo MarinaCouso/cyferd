@@ -1,7 +1,7 @@
 import React from "react"
 import { ContentContainer } from "./styles"
 import { useFormik } from "formik"
-import { FormTextInput, CheckboxInput } from "../../components/FormComponents/view"
+import { FormTextInput, CheckboxInput, FormError } from "../../components/FormComponents/view"
 import * as Yup from "yup"
 import Button from "../../components/Button/view"
 
@@ -33,11 +33,21 @@ const Form = () => {
         value={formik.values.requestedBy}
         onChangeText={formik.handleChange("requestedBy")}
         onBlur={formik.handleBlur("requestedBy")}
-        autoCapitalize="none"
       />
-      {formik.touched.title && formik.errors.title && <FormError>{formik.errors.title}</FormError>}
-      <CheckboxInput label="Approved" />
-      <Button title="Send" />
+      {formik.touched.requestedBy && formik.errors.requestedBy && <FormError>{formik.errors.requestedBy}</FormError>}
+      <CheckboxInput
+        label="Approved"
+        id="approved"
+        name="approved"
+        type="text"
+        keyboardType="default"
+        value={formik.values.approved}
+        onChangeText={formik.handleChange("approved")}
+        onBlur={formik.handleBlur("approved")}
+      />
+      {formik.touched.approved && formik.errors.approved && <FormError>{formik.errors.approved}</FormError>}
+
+      <Button title="Send" onPress={formik.handleSubmit} />
     </ContentContainer>
   )
 }
