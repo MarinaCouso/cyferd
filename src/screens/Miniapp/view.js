@@ -12,7 +12,7 @@ const Miniapp = ({ route }) => {
         <AppTitle>{appInfo?.name}</AppTitle>
       </HeaderContainer>
       <ContentContainer>
-        <Form />
+        <Form formInfo={appInfo?.fields} />
       </ContentContainer>
     </ScreenContainer>
   )

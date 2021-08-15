@@ -3,22 +3,27 @@ import { ErrorText, InputContainer, TextInput, Label, CheckBoxContainerStyle, La
 import { CheckBox } from "react-native-elements"
 import checkedIcon from "../../assets/checkedIcon.png"
 import uncheckedIcon from "../../assets/uncheckedIcon.png"
-export const FormTextInput = ({ label }) => {
+export const FormTextInput = ({ label, variableName, formik }) => {
   return (
     <InputContainer>
       <Label>{label}</Label>
-      <TextInput />
+      <TextInput
+        type="text"
+        keyboardType="default"
+        value={formik.values.variableName}
+        onChangeText={formik.handleChange(variableName)}
+        onBlur={formik.handleBlur(variableName)}
+      />
     </InputContainer>
   )
 }
 
-export const CheckboxInput = ({ label }) => {
-  const [isChecked, setIsChecked] = useState(false)
+export const CheckboxInput = ({ label, checked, onPress }) => {
   return (
     <InputContainer>
       <CheckBox
-        checked={isChecked}
-        onPress={() => setIsChecked(!isChecked)}
+        checked={checked}
+        onPress={onPress}
         checkedIcon={<CheckboxIcon source={checkedIcon} />}
         uncheckedIcon={<CheckboxIcon source={uncheckedIcon} />}
         title={label}

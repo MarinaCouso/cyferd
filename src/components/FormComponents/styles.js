@@ -8,9 +8,6 @@ export const InputContainer = styled.TouchableOpacity`
   align-content: center;
   justify-content: center;
   padding: ${hp(1)}px;
-  min-width: 25%;
-  max-width: 25%;
-  margin: 0 ${wp(2)}px;
 `
 
 export const TextInput = styled.TextInput`
