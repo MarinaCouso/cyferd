@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ContentContainer, InputContainer } from "./styles"
+import { ContentContainer, InputContainer, ScrollContainer } from "./styles"
 import { useFormik } from "formik"
 import { FormTextInput, CheckboxInput, FormError } from "../../components/FormComponents/view"
 import * as Yup from "yup"
@@ -54,13 +54,18 @@ const Form = ({ formInfo }) => {
             {formik.touched.approved && formik.errors.approved && <FormError>{formik.errors.approved}</FormError>}
           </InputContainer>
         )
+      } else if (inputType === "object") {
+        return (
+          <ScrollContainer>
+            <HorizontalScroll />
+          </ScrollContainer>
+        )
       }
     })
   }
   return (
     <ContentContainer showsVerticalScrollIndicator={false}>
       {returnInputs()}
-      <HorizontalScroll />
       <Button title="Send" onPress={() => handleRegister(formik.values)} type="submit" />
     </ContentContainer>
   )

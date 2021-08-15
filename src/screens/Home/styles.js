@@ -24,7 +24,7 @@ export const ContentContainer = styled.ScrollView.attrs({
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: hp(5),
+    paddingTop: hp(1),
   },
 })``
 

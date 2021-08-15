@@ -12,8 +12,10 @@ export const Container = styled.TouchableOpacity`
   max-width: ${hp(40)}px;
   min-width: ${hp(20)}px;
   min-height: ${hp(8)}px;
+  max-height: ${hp(10)}px;
   border-radius: ${hp(10)}px;
   margin: 0 ${wp(2)}px;
+  align-self: center;
 `
 
 export const ButtonText = styled.Text`

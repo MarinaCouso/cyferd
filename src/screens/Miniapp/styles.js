@@ -23,8 +23,8 @@ export const ContentContainer = styled.ScrollView.attrs({
     flexDirection: "row",
     flexWrap: "wrap",
     alignItems: "center",
-    justifyContent: "center",
-    paddingTop: hp(5),
+    justifyContent: "flex-start",
+    paddingTop: hp(1),
   },
 })``
 

@@ -1,7 +1,8 @@
 import React from "react"
 import Form from "../../components/Form/view"
 import { ContentContainer } from "../Home/styles"
-import { ScreenContainer, HeaderContainer, AppTitle } from "./styles"
+import { ScreenContainer, HeaderContainer } from "./styles"
+import { AppTitle } from "../../components/TextComponents/styles"
 
 const Miniapp = ({ route }) => {
   const { appInfo } = route.params

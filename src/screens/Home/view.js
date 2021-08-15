@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { ScreenContainer, ContentContainer, HeaderContainer, AppTitle } from "./styles"
+import { ScreenContainer, ContentContainer, HeaderContainer } from "./styles"
 import Button from "../../components/Button/view"
-import { getData } from "../../services/dataService"
+import { getAppsInfo } from "../../services/dataService"
+import { AppTitle } from "../../components/TextComponents/styles"
 
 const Home = ({ navigation }) => {
   const [appsInfo, setAppsInfo] = useState([])
 
-  const getDataFromService = async () => {
-    const json = await getData()
+  const getAppsInfoFromService = async () => {
+    const json = await getAppsInfo()
     setAppsInfo(json)
   }
+
   useEffect(() => {
-    getDataFromService()
+    getAppsInfoFromService()
   }, [])
 
   return (
