@@ -13,15 +13,16 @@ const Home = ({ navigation }) => {
   useEffect(() => {
     getDataFromService()
   }, [])
-  console.log(appsInfo)
+
   return (
     <ScreenContainer>
       <HeaderContainer>
         <AppTitle>Home</AppTitle>
       </HeaderContainer>
       <ContentContainer showsVerticalScrollIndicator={false}>
-        <Button title="Helo" onPress={() => navigation.navigate("MiniApp")} />
-        <Button title="MiniApp 2" />
+        {appsInfo?.apps?.map((app, key) => (
+          <Button key={key} title={app.name} onPress={() => navigation.navigate("MiniApp", { appInfo: app })} />
+        ))}
       </ContentContainer>
     </ScreenContainer>
   )

@@ -3,11 +3,13 @@ import Form from "../../components/Form/view"
 import { ContentContainer } from "../Home/styles"
 import { ScreenContainer, HeaderContainer, AppTitle } from "./styles"
 
-const Miniapp = () => {
+const Miniapp = ({ route }) => {
+  const { appInfo } = route.params
+  console.log(appInfo, "at miniaoo")
   return (
     <ScreenContainer>
       <HeaderContainer>
-        <AppTitle>MiniApp 1</AppTitle>
+        <AppTitle>{appInfo?.name}</AppTitle>
       </HeaderContainer>
       <ContentContainer>
         <Form />

@@ -9,7 +9,8 @@ export const Container = styled.TouchableOpacity`
   justify-content: center;
   padding: ${hp(1)}px;
   background-color: blueviolet;
-  max-width: ${hp(20)}px;
+  max-width: ${hp(40)}px;
+  min-width: ${hp(20)}px;
   min-height: ${hp(8)}px;
   border-radius: ${hp(10)}px;
   margin: 0 ${wp(2)}px;
@@ -20,4 +21,5 @@ export const ButtonText = styled.Text`
   font-family: Verdana;
   font-size: ${hp(2.5)}px;
   align-self: center;
+  text-align: center;
 `
