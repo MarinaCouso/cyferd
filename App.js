@@ -3,7 +3,7 @@ import React from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import Home from "./src/screens/Home"
-import MiniApp from "./src/screens/MiniApp"
+import Miniapp from "./src/screens/Miniapp"
 
 export default function App() {
   const Stack = createStackNavigator()
@@ -16,7 +16,7 @@ export default function App() {
         }}
       >
         {/* <Stack.Screen name="Home" component={Home} /> */}
-        <Stack.Screen name="MiniApp" component={MiniApp} />
+        <Stack.Screen name="MiniApp" component={Miniapp} />
       </Stack.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
