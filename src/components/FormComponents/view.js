@@ -28,3 +28,7 @@ export const CheckboxInput = ({ label }) => {
     </InputContainer>
   )
 }
+
+export const FormError = ({ children }) => {
+  return <ErrorText>{children}</ErrorText>
+}

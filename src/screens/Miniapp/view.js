@@ -1,5 +1,5 @@
 import React from "react"
-import { FormTextInput, CheckboxInput } from "../../components/FormComponents/view"
+import Form from "../../components/Form/view"
 import { ContentContainer } from "../Home/styles"
 import { ScreenContainer, HeaderContainer, AppTitle } from "./styles"
 
@@ -10,8 +10,7 @@ const Miniapp = () => {
         <AppTitle>MiniApp 1</AppTitle>
       </HeaderContainer>
       <ContentContainer>
-        <FormTextInput label="Requested By" />
-        <CheckboxInput label="Approved" />
+        <Form />
       </ContentContainer>
     </ScreenContainer>
   )

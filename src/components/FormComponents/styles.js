@@ -52,3 +52,8 @@ export const CheckboxIcon = styled.Image`
   width: 20px;
   height: 20px;
 `
+export const ErrorText = styled.Text`
+  color: red;
+  font-size: ${hp(1.5)}px;
+  padding-bottom: ${hp(1)}px;
+`
