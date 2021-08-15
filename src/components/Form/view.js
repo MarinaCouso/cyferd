@@ -10,21 +10,15 @@ const validationSchema = Yup.object().shape({
   approved: Yup.boolean().required("* Este campo es obligatorio"),
 })
 
-const handleRegister = ({ newRegister }) => {
+const handleRegister = (newRegister) => {
   console.log(newRegister)
 }
+
 const Form = ({ formInfo }) => {
   const formik = useFormik({
     initialValues: {
       requestedby: "",
       approved: false,
-    },
-    onSubmit: (values) => {
-      const newRegister = {
-        approved,
-        requestedby,
-      }
-      handleRegister({ newRegister })
     },
     validationSchema: validationSchema,
   })
@@ -65,7 +59,7 @@ const Form = ({ formInfo }) => {
   return (
     <ContentContainer showsVerticalScrollIndicator={false}>
       {returnInputs()}
-      <Button title="Send" onPress={formik.handleSubmit} type="submit" />
+      <Button title="Send" onPress={() => handleRegister(formik.values)} type="submit" />
     </ContentContainer>
   )
 }
