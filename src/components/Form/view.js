@@ -20,6 +20,7 @@ const Form = ({ formInfo }) => {
     initialValues: {
       requestedby: "",
       approved: false,
+      equipmentId: undefined,
     },
     validationSchema: validationSchema,
   })
@@ -56,8 +57,8 @@ const Form = ({ formInfo }) => {
         )
       } else if (inputType === "object") {
         return (
-          <ScrollContainer>
-            <HorizontalScroll />
+          <ScrollContainer key={key}>
+            <HorizontalScroll handleObject={(id) => formik.setFieldValue("equipmentId", id)} />
           </ScrollContainer>
         )
       }

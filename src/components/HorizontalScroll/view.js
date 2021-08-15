@@ -7,7 +7,7 @@ import { HorizontalScrollView } from "./styles"
 // Components
 import Card from "../../components/Card"
 
-const HorizontalScroll = () => {
+const HorizontalScroll = ({ handleObject }) => {
   const [objectsInfo, setObjectsInfo] = useState([])
 
   const getObjectsDataFromService = async () => {
@@ -18,10 +18,13 @@ const HorizontalScroll = () => {
     getObjectsDataFromService()
   }, [])
 
+  const handleCard = (id) => {
+    handleObject(id)
+  }
   return (
     <HorizontalScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-      {objectsInfo?.map((object) => (
-        <Card object={object} />
+      {objectsInfo?.map((object, key) => (
+        <Card key={key} object={object} onPress={(id) => handleCard(id)} />
       ))}
     </HorizontalScrollView>
   )

@@ -1,7 +1,7 @@
 import styled from "styled-components/native"
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen"
 
-export const CardContainer = styled.View`
+export const CardContainer = styled.TouchableOpacity`
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -20,7 +20,7 @@ export const CardImage = styled.Image`
   width: 100%;
 `
 
-export const CardContentContainer = styled.TouchableOpacity`
+export const CardContentContainer = styled.View`
   display: flex;
   flex-direction: column;
   align-items: center;
